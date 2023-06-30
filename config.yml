@@ -17,22 +17,20 @@ minify:
 params:
   env: production # to enable google analytics, opengraph, twitter-cards and schema.
   title: CBServers
-  description: "ExampleSite description"
-  keywords: [Blog, Portfolio, PaperMod]
-  author: Me
-  # author: ["Me", "You"] # multiple authors
-  images: ["<link or path of image for opengraph, twitter-cards>"]
+  description: "CBServers"
+  author: Brad
+  #images: ["<link or path of image for opengraph, twitter-cards>"]
   DateFormat: "January 2, 2006"
   defaultTheme: dark # dark, light
   disableThemeToggle: true
 
-  ShowReadingTime: true
+  ShowReadingTime: false
   ShowShareButtons: true
   ShowPostNavLinks: true
   ShowBreadCrumbs: true
   ShowCodeCopyButtons: false
-  ShowWordCount: true
-  ShowRssButtonInSectionTermList: true
+  ShowWordCount: false
+  ShowRssButtonInSectionTermList: false
   UseHugoToc: true
   disableSpecial1stPost: false
   disableScrollToTop: false
@@ -45,15 +43,15 @@ params:
   assets:
     # disableHLJS: true # to disable highlight.js
     # disableFingerprinting: true
-    favicon: "<link / abs url>"
-    favicon16x16: "<link / abs url>"
-    favicon32x32: "<link / abs url>"
-    apple_touch_icon: "<link / abs url>"
-    safari_pinned_tab: "<link / abs url>"
+    favicon: "favicon.ico"
+    favicon16x16: "favicon-16x16.png"
+    favicon32x32: "favicon-32x32.png"
+    apple_touch_icon: "apple-touch-icon.png"
+    safari_pinned_tab: "safari-pinned-tab.svg"
 
   label:
     text: "CB Servers"
-    icon: /apple-touch-icon.png
+    icon: apple-touch-icon.png
     iconHeight: 35
 
   # profile-mode
@@ -64,7 +62,7 @@ params:
     imageUrl: "logo.png"
     imageWidth: 120
     imageHeight: 120
-    imageTitle: my image
+    imageTitle: CB Servers Logo
     buttons:
       - name: Downloads
         url: downloads
@@ -97,11 +95,6 @@ params:
     hiddenInList: true # hide on list pages and home
     hiddenInSingle: true # hide on single page
 
-  editPost:
-    URL: "https://github.com/<path_to_repo>/content"
-    Text: "Suggest Changes" # edit text
-    appendFilePath: true # to append file path to Edit link
-
   # for search
   # https://fusejs.io/api/options.html
   fuseOpts:
@@ -112,6 +105,7 @@ params:
     threshold: 0.4
     minMatchCharLength: 0
     keys: ["title", "permalink", "summary", "content"]
+    
 menu:
   main:
     - identifier: Downloads
