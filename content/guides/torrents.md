@@ -2,14 +2,14 @@
 author: "Brad"
 title: "Game Torrent Install Guide"
 date: "2023-06-29"
-aliases: ["client-downloads"]
+aliases: ["torrent-guide"]
 ShowToc: false
 TocOpen: false
 ---
 
 ### Prerequisites
 - Desired Torrent client such as [qBittorrent](https://www.qbittorrent.org/download)
-- Desired Game Torrent to download (see Step 1)
+- Desired Game Torrent to download (see [Step 1](#guide))
 - Game Client (see our [downloads](/downloads) page)
 
 ### Guide
