@@ -1,7 +1,7 @@
 baseURL: "https://cbservers.xyz/"
 title: CBServers
 paginate: 5
-theme: PaperMod
+theme: ["hugo-redirect", "PaperMod"] 
 
 enableRobotsTXT: true
 buildDrafts: false
@@ -80,7 +80,7 @@ params:
     - name: twitter
       url: "https://twitter.com/ServersCB"
     - name: discord
-      url: "https://discord.io/CBServers"
+      url: "/discord"
 
   analytics:
     google:
@@ -118,7 +118,7 @@ menu:
       weight: 20
     - identifier: Discord
       name: Discord
-      url: https://discord.io/CBServers
+      url: /discord/
       weight: 30
 # Read: https://github.com/adityatelange/hugo-PaperMod/wiki/FAQs#using-hugos-syntax-highlighter-chroma
 pygmentsUseClasses: true
