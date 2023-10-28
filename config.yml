@@ -80,7 +80,9 @@ params:
     - name: twitter
       url: "https://twitter.com/ServersCB"
     - name: discord
-      url: "/discord"
+      url: "https://discord.gg/WyJQCwCCGW"
+    - name: github
+      url: "https://github.com/CBServers"
 
   analytics:
     google:
@@ -118,7 +120,7 @@ menu:
       weight: 20
     - identifier: Discord
       name: Discord
-      url: /discord/
+      url: https://discord.gg/WyJQCwCCGW
       weight: 30
 # Read: https://github.com/adityatelange/hugo-PaperMod/wiki/FAQs#using-hugos-syntax-highlighter-chroma
 pygmentsUseClasses: true
