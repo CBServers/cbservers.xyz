@@ -2,7 +2,7 @@ baseURL: "https://cbservers.xyz/"
 title: CBServers
 paginate: 5
 theme: ["hugo-redirect", "PaperMod"] 
-
+  
 enableRobotsTXT: true
 buildDrafts: false
 buildFuture: false
@@ -25,7 +25,7 @@ params:
   disableThemeToggle: true
 
   ShowReadingTime: false
-  ShowShareButtons: true
+  ShowShareButtons: false
   ShowPostNavLinks: true
   ShowBreadCrumbs: true
   ShowCodeCopyButtons: false
@@ -58,7 +58,7 @@ params:
   profileMode:
     enabled: true # needs to be explicitly set
     title: CB Servers
-    subtitle: "Servers hosted on BOIII, S1x, IW6x, and H1-Mod"
+    subtitle: "Servers hosted on BOIII, S1x, IW6x, H1-Mod, and H2M-Mod"
     imageUrl: "logo.png"
     imageWidth: 120
     imageHeight: 120
