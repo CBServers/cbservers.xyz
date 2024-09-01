@@ -33,15 +33,9 @@
         <h1>{{ .title | default site.Title | markdownify }}</h1>
         <span>{{ .subtitle | markdownify }}</span>
         
-        {{ $data := getJSON "https://servers.brad.stream/api/status" }}
-        {{ $serverCount := 0 }}
-        {{ $playerCount := 0 }}
-        {{ range $index, $server := $data }}
-            {{ $serverCount = add $serverCount 1 }}
-            {{ $playerCount = add $playerCount $server.currentPlayers }}
-        {{ end }}
-        <p style="color: rgb(49 175 131);margin-top: 15px;margin-bottom: 15px;"> 
-            Join <strong>{{ $playerCount }}</strong> players across <strong>{{ $serverCount }}</strong> servers!
+        
+        <p id="playerCount" style="color: rgb(49 175 131);margin-top: 15px;margin-bottom: 15px;"> 
+            Loading player count...
           </p>
 
         {{- partial "social_icons.html" site.Params.socialIcons -}}
