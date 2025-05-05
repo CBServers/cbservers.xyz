@@ -14,10 +14,18 @@ TocOpen: false
 
 ### Guide
 1. **Download your desired game Torrent**
+    #### Full Game Torrents
     - [Black Ops 3 Torrent](https://github.com/CBServers/client-dowloads/raw/main/torrents/t7_full_game.torrent)
     - [Advanced Warfare Torrent](https://github.com/CBServers/client-dowloads/raw/main/torrents/s1x_full_game.torrent)
     - [Ghosts Torrent](https://github.com/CBServers/client-dowloads/raw/main/torrents/iw6x_full_game.torrent)
     - [Modern Warfare Remastered Torrent](https://github.com/CBServers/client-dowloads/raw/main/torrents/h1_full_files.torrent)
+    - [Infinite Warfare Torrent](https://github.com/CBServers/client-dowloads/raw/main/torrents/iw7_full_game.torrent) (ZIP Password: cs.rin.ru)
+
+    #### DLC Only Torrents
+    - [Black Ops 3 Zombies DLC Torrent](https://github.com/CBServers/client-dowloads/raw/main/torrents/t7_dlc.torrent)
+    - [Advanced Warfare DLC Torrent](https://github.com/CBServers/client-dowloads/raw/main/torrents/s1_dlc.torrent)
+    - [Ghosts DLC Torrent](https://github.com/CBServers/client-dowloads/raw/main/torrents/iw6_dlcs.torrent)
+    - [Modern Warfare Remastered DLC Torrent](https://github.com/CBServers/client-dowloads/raw/main/torrents/h1_dlcs.torrent)
 
 2. **Download game files using Torrent client**
     
