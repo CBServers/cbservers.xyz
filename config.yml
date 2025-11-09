@@ -65,7 +65,7 @@ params:
     imageTitle: CB Servers Logo
     buttons:
       - name: Launcher
-        url: downloads/launcher
+        url: launcher
       - name: Downloads
         url: downloads
       - name: Status
