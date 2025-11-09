@@ -49,5 +49,5 @@ TocOpen: false
     ![Image](https://i.imgur.com/5bbZyFP.png)
 7. **Congratulations, you have successfully installed custom maps on the torrent version for BO3**
 
-If you need more help or support, please join our [discord](http://discord.io/CBServers).
+If you need more help or support, please join our [discord](https://cbservers.xy/discord).
 
