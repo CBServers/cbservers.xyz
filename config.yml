@@ -64,10 +64,10 @@ params:
     imageHeight: 120
     imageTitle: CB Servers Logo
     buttons:
+      - name: Launcher
+        url: downloads/launcher
       - name: Downloads
         url: downloads
-      - name: Guides
-        url: guides
       - name: Status
         url: https://servers.brad.stream/
 
