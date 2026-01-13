@@ -24,14 +24,15 @@ For more detailed instructions, visit https://cbservers.xyz/downloads/launcher.
 - HorizonMW (HMW-Mod)
 
 **Current Features:**
-* Download game files without torrent
+* Download supported game files without torrent
+* Download any DLC/Campaign Content for all supported games
 * Setup existing game installs
+* Manage installs to download/remove DLC content from existing installs
 * Stays up to latest version of the clients
 * Fast file verification
 * Unlock All option for HMW
 * Consistent and shared GUID with all clients
 
-NOTE: Currently, game downloads DO NOT include Campaign or Zombies DLC due to large game size (Only Multiplayer and DLC is included). This may change in the future depending on demand. 
+---
 
-If you need more help or support, please join our [discord](https://cbservers.xy/discord).
-Have fun!
+If you need more help or support, please join our [discord](/discord).

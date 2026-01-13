@@ -12,6 +12,8 @@ TocOpen: false
 - Desired Game Torrent to download (see [Step 1](#guide))
 - Game Client (see our [downloads](/downloads) page)
 
+---
+
 ### Guide
 1. **Download your desired game Torrent**
     #### Full Game Torrents
@@ -40,3 +42,7 @@ TocOpen: false
     Now, you'll need to download the actual client for the game you downloaded.
 
     You can find the downloads for all the game clients we support [here](/downloads).
+
+---
+
+If you need more help or support, please join our [discord](/discord).

@@ -12,6 +12,8 @@ TocOpen: false
 - BOIII Client (see our [BOIII download](/downloads/boiii) page)
 - [SteamCMD](https://steamcdn-a.akamaihd.net/client/installer/steamcmd.zip) (Steam Console Client)
 
+---
+
 ### Guide
 1. **Visit the [Black Ops 3 Steam Workshop](https://steamcommunity.com/app/311210/workshop/)**
 2. **Search the map that you want to download in the search bar**
@@ -49,5 +51,7 @@ TocOpen: false
     ![Image](https://i.imgur.com/5bbZyFP.png)
 7. **Congratulations, you have successfully installed custom maps on the torrent version for BO3**
 
-If you need more help or support, please join our [discord](https://cbservers.xy/discord).
+---
+
+If you need more help or support, please join our [discord](/discord).
 

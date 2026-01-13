@@ -12,6 +12,8 @@ TocOpen: false
 - Be in the [Celebrity & Brad Trickshotting](/discord) Discord Server with the VIP role.
 - Have a brain.
 
+---
+
 ### Written Guide
 1. **Join any of our trickshotting servers on any game.**
 
@@ -39,3 +41,7 @@ TocOpen: false
   Your browser does not support the video tag.
 </video>
 {{< /rawhtml >}}
+
+---
+
+If you need more help or support, please join our [discord](/discord).
