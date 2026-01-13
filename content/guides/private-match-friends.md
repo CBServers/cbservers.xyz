@@ -18,7 +18,7 @@ Due to the nature of these community clients being separated from Steam's infras
   - [IW6X (Ghosts)](/downloads/iw6x)
   - [H1-Mod (Modern Warfare Remastered)](/downloads/h1-mod)
   - [IW7-Mod (Infinite Warfare)](/downloads/iw7-mod)
-  - [HMW-Mod (HorizonMW)](/downloads/hmw-mod)
+  - [HMW (HorizonMW)](/downloads/hmw)
 - The client executable in your game folder
 - For Radmin VPN method: [Radmin VPN](https://www.radmin-vpn.com/) installed
 - For Public IP method: Access to your router for port forwarding
@@ -30,7 +30,7 @@ Due to the nature of these community clients being separated from Steam's infras
 - IW6X: `27016`
 - H1-Mod: `27016`
 - IW7-Mod: `27016`
-- HMW-Mod: `27016`
+- HMW: `27016`
 
 ---
 
