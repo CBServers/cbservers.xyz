@@ -58,7 +58,7 @@ params:
   profileMode:
     enabled: true # needs to be explicitly set
     title: CB Servers
-    subtitle: "Servers hosted on BOIII, S1x, IW6x, H1-Mod, and H2M-Mod"
+    subtitle: "Servers hosted on BOIII, S1x, IW6x, H1-Mod, IW7-Mod, and HMW"
     imageUrl: "logo.png"
     imageWidth: 120
     imageHeight: 120
@@ -68,13 +68,15 @@ params:
         url: launcher
       - name: Downloads
         url: downloads
+      - name: Guides
+        url: guides
       - name: Status
         url: https://servers.brad.stream/
 
   # home-info mode
   homeInfoParams:
     Title: "CB Servers"
-    Content: Servers hosted on BOIII, S1x, IW6x, and H1-Mod
+    Content: Servers hosted on BOIII, S1x, IW6x, H1-Mod, IW7-Mod, and HMW
 
   socialIcons:
     - name: twitter
@@ -110,18 +112,22 @@ params:
 
 menu:
   main:
+    - identifier: Launcher
+      name: Launcher
+      url: /launcher/
+      weight: 10
     - identifier: Downloads
       name: Downloads
       url: /downloads/
-      weight: 10
+      weight: 20
     - identifier: Guides
       name: Guides
       url: /guides/
-      weight: 20
+      weight: 30
     - identifier: Discord
       name: Discord
       url: https://discord.gg/WyJQCwCCGW
-      weight: 30
+      weight: 40
 # Read: https://github.com/adityatelange/hugo-PaperMod/wiki/FAQs#using-hugos-syntax-highlighter-chroma
 pygmentsUseClasses: true
 markup:

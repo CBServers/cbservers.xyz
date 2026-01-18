@@ -1,6 +1,6 @@
 ---
 author: "Brad"
-title: "Introducing the CB Servers Launcher!"
+title: "CB Servers Launcher"
 date: "2025-11-09"
 aliases: ["client-downloads"]
 ShowToc: false
