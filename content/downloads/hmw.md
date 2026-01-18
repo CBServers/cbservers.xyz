@@ -1,6 +1,6 @@
 ---
 author: "Brad"
-title: "Modern Warfare 2 Remastered Client (HMW, H2M-Mod)"
+title: "Horizon Modern Warfare Client (HMW)"
 date: "2024-09-15"
 aliases: ["client-downloads"]
 ShowToc: false
