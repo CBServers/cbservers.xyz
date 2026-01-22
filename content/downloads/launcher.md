@@ -27,7 +27,7 @@ Each game has a settings popup you can access by clicking the Cog Wheel on the g
 
 ---
 
-**IMPORTANT NOTE:** Our launcher is not affiliated or endorsed by AlterWare, Aurora, or Horizon MW.  Please do not bug original client maintainers with support requests in regards to the launcher or our client forks.
+**IMPORTANT NOTE:** Our launcher is not affiliated or endorsed by AlterWare, Aurora, or Horizon MW.  Please do not bug original client maintainers with support requests in regards to the launcher.
 
 ---
 

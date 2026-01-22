@@ -35,4 +35,8 @@ For more detailed instructions, visit https://cbservers.xyz/downloads/launcher.
 
 ---
 
+**IMPORTANT NOTE: ** Our launcher is not affiliated or endorsed by AlterWare, Aurora, or Horizon MW.  Please do not bug original client maintainers with support requests in regards to the launcher.
+
+---
+
 If you need more help or support, please join our [discord](/discord).
