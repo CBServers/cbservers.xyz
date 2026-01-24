@@ -3,7 +3,7 @@
 # url to "/old_blog" and redirect_to to "/blog" below
 type = "redirect"
 url = "/downloads"
-redirect_to = "https://docs.cbservers.xyz/downloads"
+redirect_to = "https://docs.cbservers.xyz/games"
 redirect_enabled = true
 private = true
 +++
