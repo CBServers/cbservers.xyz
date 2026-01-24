@@ -70,6 +70,8 @@ params:
         url: downloads
       - name: Guides
         url: guides
+      - name: Docs
+        url: https://docs.cbservers.xyz/
       - name: Status
         url: https://servers.brad.stream/
 
