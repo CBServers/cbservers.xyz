@@ -1,12 +1,12 @@
 ---
 title: "Privacy Policy"
-date: 2026-06-26
+date: 2026-07-17
 hidemeta: false
 ShowReadingTime: false
 ShowBreadCrumbs: false
 ---
 
-_Last updated: June 26, 2026_
+_Last updated: July 17, 2026_
 
 This Privacy Policy explains what information the **CB Servers Launcher** (the
 "Launcher") and its supporting service at `auth.cbservers.xyz` collect, how it is
@@ -17,6 +17,8 @@ little information as possible.
 ## Summary
 
 - We do **not** require an account to use the Launcher.
+- The Launcher contacts our update servers on startup to keep itself and your
+  game clients up to date. No personal information is sent.
 - We only store data if you choose to **link your Discord account** for the
   friends-list feature.
 - The only information we keep is your **Discord user ID** and the **time you
@@ -84,6 +86,23 @@ Social SDK. With your authorization, this is used to:
 Your use of Discord is also governed by
 [Discord's Privacy Policy](https://discord.com/privacy).
 
+## Software updates and downloads
+
+To keep your installation current, the Launcher communicates with CB Servers
+infrastructure without requiring any account or action on your part:
+
+- **Update checks.** On startup, the Launcher checks for updates to the
+  Launcher itself and to the game clients it manages. Update manifests and
+  files are hosted on **GitHub** in our public
+  [updater repository](https://github.com/CBServers/updater).
+- **Game downloads.** Game files you install are downloaded from our CDN. Your
+  selected CDN region is stored locally on your device only.
+
+These requests carry no account information or personal identifiers — only the
+standard metadata inherent to any HTTP request (such as your IP address), which
+our hosting providers may briefly process to deliver the service. Running the
+Launcher with the `-offline` flag disables all update checks and downloads.
+
 ## Third-party services
 
 We rely on the following third parties to operate the Launcher:
@@ -95,6 +114,10 @@ We rely on the following third parties to operate the Launcher:
   Cloudflare may process request metadata (such as IP addresses) as part of
   delivering and protecting the service. See Cloudflare's
   [Privacy Policy](https://www.cloudflare.com/privacypolicy/).
+- **GitHub** — Launcher and game client updates are distributed through our
+  public GitHub repositories. GitHub may process request metadata (such as IP
+  addresses) when the Launcher checks for or downloads updates. See GitHub's
+  [Privacy Statement](https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement).
 
 ## Data retention and deletion
 
