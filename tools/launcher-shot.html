@@ -1,0 +1,20 @@
+<!doctype html><html><head><meta charset="utf-8"><style>html,body{margin:0;height:100%;overflow:hidden;background:#0A0C0A}iframe{border:0;width:1280px;height:800px;display:block}</style></head>
+<body><iframe id="f" src="main.html"></iframe>
+<script>
+const view = new URLSearchParams(location.search).get('view') || 'library';
+const f = document.getElementById('f');
+f.addEventListener('load', () => {
+  const w = f.contentWindow, d = f.contentDocument;
+  const base = w.executeCommand;
+  const installed = new Set(['cod4x', 'iw4x', 't6', 'boiii', 'iw6x', 'h1-mod', 'hmw-mod']);
+  w.executeCommand = (cmd, data) => {
+    if (cmd === 'get-game-property' && data && data.suffix === 'is-installed') return Promise.resolve(installed.has(data.game) ? 'true' : 'false');
+    if (cmd === 'get-game-property' && data && data.suffix === 'install') return Promise.resolve(installed.has(data.game) ? 'C:/Games/' + data.game : '');
+    return base(cmd, data);
+  };
+  setTimeout(() => {
+    if (view === 'game') { w.handleDeepLink('cbservers://game/boiii'); }
+    else { const el = d.getElementById(view); if (el) el.click(); }
+  }, 2500);
+});
+</script></body></html>

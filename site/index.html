@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CB Servers</title>
+<meta name="description" content="CB Servers is a community for Call of Duty custom clients: one launcher for every game from CoD 1 to Black Ops 4, plus trickshot servers we host ourselves.">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#0a0c0a">
+<meta property="og:title" content="CB Servers">
+<meta property="og:description" content="Every Call of Duty, one launcher. Plus the trickshot servers we host.">
+<meta property="og:image" content="https://cbservers.xyz/assets/img/og.png">
+<meta property="og:url" content="https://cbservers.xyz/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon-32x32.png" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preload" href="/assets/fonts/rajdhani-700.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/ibm-plex-mono-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/site.css">
+</head>
+<body class="tactical-grid">
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="/">
+      <img src="/assets/img/logo.png" alt="" width="34" height="34">
+      <span><span class="brand-title">CB Servers</span><span class="brand-sub">Community CoD</span></span>
+    </a>
+    <button class="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="nav">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+    <nav id="nav">
+      <a href="/" aria-current="page">Home</a>
+      <a href="/launcher/">Launcher</a>
+      <a href="/#servers">Servers</a>
+      <a href="/stats/">Stats</a>
+      <a href="https://docs.cbservers.xyz/" rel="noopener">Docs</a>
+      <a href="/discord" rel="noopener">Discord</a>
+      <a class="btn primary small" href="/launcher/#download">Download</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-copy">
+        <p class="eyebrow">Community Call of Duty</p>
+        <h1>Every Call of Duty.<br><span class="accent">One launcher.</span></h1>
+        <p class="lead">CB Servers keeps the classic Call of Duty games playable. Our launcher installs, updates and runs the community clients for eighteen titles, and we host our own servers to play on.</p>
+        <div class="hero-actions">
+          <a class="btn primary" href="/launcher/#download">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0 4-4m-4 4-4-4M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
+            Get the launcher
+          </a>
+          <a class="btn" href="/discord" rel="noopener">Join the Discord</a>
+          <span class="btn-note">Free and open source. Windows 10 or newer, Linux through Proton.</span>
+        </div>
+        <p class="live-line" id="live-line" aria-live="polite">
+          <span class="dot" aria-hidden="true"></span>
+          <span><span class="num" id="live-online">–</span> launchers online</span>
+          <span class="sep">/</span>
+          <span><span class="num" id="live-ingame">–</span> in a game</span>
+          <span class="sep">/</span>
+          <span><span class="num" id="live-players">–</span> players on public servers</span>
+        </p>
+      </div>
+      <div class="frame">
+        <img src="/assets/img/screens/library.webp" alt="The CB Servers launcher library, showing every supported Call of Duty title" width="1280" height="800" fetchpriority="high">
+        <span class="c3"></span><span class="c4"></span>
+        <span class="tag">Launcher / Library</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">What we do</p>
+          <h2>What CB Servers is</h2>
+        </div>
+      </div>
+      <div class="grid cols-3">
+        <a class="card chamfer" href="/launcher/">
+          <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z"/><path d="m10 8 5 4-5 4z"/></svg></span>
+          <h3>The launcher</h3>
+          <p>One place to install, update, verify and play every supported client. Works with the game files you already own or downloads them for you.</p>
+          <span class="more">Features and download</span>
+        </a>
+        <a class="card chamfer" href="#servers">
+          <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="6" rx="1"/><rect x="3" y="14" width="18" height="6" rx="1"/><path d="M7 7h.01M7 17h.01"/></svg></span>
+          <h3>Our servers</h3>
+          <p>Trickshot and custom gun game servers on the clients we support, with custom weapons, afterhit, save and load, and commands built around each mode.</p>
+          <span class="more">See the server list</span>
+        </a>
+        <a class="card chamfer" href="/discord" rel="noopener">
+          <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
+          <h3>The community</h3>
+          <p>Support, clips, custom maps and people to play with. The Discord is where releases, server changes and help all happen.</p>
+          <span class="more">Join on Discord</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section id="servers">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Servers we host</p>
+          <h2>Our servers</h2>
+          <p>Trickshot and custom gun game servers across the clients the launcher supports. Copy a connect line into the in-game console, or find them under Servers in the launcher.</p>
+        </div>
+        <span class="aside" id="servers-updated">Live counts load in a moment.</span>
+      </div>
+      <div class="server-groups">
+        <div class="server-group" data-source="https://servers.brad.stream/api/status" data-features="Save/Load &amp; OOM">
+          <h3 class="server-group-title">Celebrity's servers</h3>
+          <div class="servers" data-list><p class="servers-empty">Loading.</p></div>
+        </div>
+        <div class="server-group" data-source="https://stank.brad.stream/api/status" data-host="us.cbservers.xyz" data-features="Random weapons &amp; events">
+          <h3 class="server-group-title">Stank Servers</h3>
+          <div class="servers" data-list><p class="servers-empty">Loading.</p></div>
+        </div>
+      </div>
+      <div class="servers-foot">
+        <span>Commands, custom guns and afterhit lists for each server are in the <a href="https://docs.cbservers.xyz/servers" rel="noopener">server docs</a>.</span>
+        <span>Counts refresh every 30 seconds.</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="launcher">
+    <div class="wrap split">
+      <div class="frame">
+        <img src="/assets/img/screens/game.webp" alt="A game page in the launcher with play, verify and mods controls" width="1280" height="800" loading="lazy">
+        <span class="c3"></span><span class="c4"></span>
+        <span class="tag">Launcher / Game page</span>
+      </div>
+      <div>
+        <p class="eyebrow">The launcher</p>
+        <h2>Install once, play everything</h2>
+        <p class="lead">Point it at a Steam install or let it download the files. It keeps the client and the game current, verifies what you have and launches straight into the mode you pick.</p>
+        <ul class="feature-list">
+          <li><span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-6.2-8.56"/><path d="M21 3v6h-6"/></svg></span><div><strong>Always up to date</strong><span>Clients and game files update in the background, with fast hash-based verification when something breaks.</span></div></li>
+          <li><span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></span><div><strong>Friends and invites</strong><span>See who is playing what, invite people straight into your match, and use Discord or a launcher account, your choice.</span></div></li>
+          <li><span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 2 7l10 5 10-5-10-5z"/><path d="m2 17 10 5 10-5M2 12l10 5 10-5"/></svg></span><div><strong>Mods and custom maps</strong><span>Browse the Steam Workshop for Black Ops 3 and hosted catalogs for other games, then install with one click.</span></div></li>
+        </ul>
+        <div class="hero-actions">
+          <a class="btn primary" href="/launcher/">All features</a>
+          <a class="btn" href="https://docs.cbservers.xyz/launcher" rel="noopener">Read the docs</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="numbers">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Right now</p>
+          <h2>Live across the community</h2>
+        </div>
+        <a class="aside" href="/stats/">Full statistics and history &rarr;</a>
+      </div>
+      <div class="stat-strip">
+        <div class="stat"><span class="label">Launchers online</span><span class="value accent" id="s-online">–</span><span class="note" id="s-online-note"></span></div>
+        <div class="stat"><span class="label">In a game</span><span class="value" id="s-ingame">–</span><span class="note" id="s-ingame-note"></span></div>
+        <div class="stat"><span class="label">Players on public servers</span><span class="value" id="s-players">–</span><span class="note" id="s-players-note"></span></div>
+        <div class="stat"><span class="label">All-time peak launchers</span><span class="value" id="s-peak">–</span><span class="note" id="s-peak-note"></span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <div class="wrap">
+      <p class="eyebrow">Ready</p>
+      <h2>Drop in</h2>
+      <div class="hero-actions">
+        <a class="btn primary" href="/launcher/#download">Get the launcher</a>
+        <a class="btn" href="/discord" rel="noopener">Join the Discord</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <a class="brand" href="/"><img src="/assets/img/logo.png" alt="" width="34" height="34"><span><span class="brand-title">CB Servers</span><span class="brand-sub">Community CoD</span></span></a>
+      <p>A free, community-run project for Call of Duty custom clients. Not affiliated with or endorsed by Activision, IW4x, Plutonium, AlterWare, Aurora or HorizonMW.</p>
+    </div>
+    <div>
+      <h4>Site</h4>
+      <ul>
+        <li><a href="/launcher/">Launcher</a></li>
+        <li><a href="/#servers">Servers</a></li>
+        <li><a href="/stats/">Statistics</a></li>
+        <li><a href="https://docs.cbservers.xyz/" rel="noopener">Documentation</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Elsewhere</h4>
+      <ul>
+        <li><a href="/discord" rel="noopener">Discord</a></li>
+        <li><a href="https://github.com/CBServers" rel="noopener">GitHub</a></li>
+        <li><a href="/x" rel="noopener">X</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap foot-bottom">
+    <span>&copy; <span id="year">2026</span> CB Servers</span>
+    <span><a href="/privacy/">Privacy</a> &middot; <a href="/terms/">Terms</a></span>
+  </div>
+</footer>
+
+<script src="/assets/site.js" defer></script>
+</body>
+</html>

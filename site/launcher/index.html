@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CB Servers Launcher</title>
+<meta name="description" content="The CB Servers Launcher installs, updates and runs the community clients for eighteen Call of Duty titles from one place. Free, open source, Windows 10 or newer.">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#0a0c0a">
+<link rel="canonical" href="https://cbservers.xyz/launcher/">
+<meta property="og:title" content="CB Servers Launcher">
+<meta property="og:description" content="Every Call of Duty, one launcher. Install, update and play the community clients from CoD 1 to Black Ops 4.">
+<meta property="og:image" content="https://cbservers.xyz/assets/img/og.png">
+<meta property="og:url" content="https://cbservers.xyz/launcher/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon-32x32.png" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preload" href="/assets/fonts/rajdhani-700.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/ibm-plex-mono-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/site.css">
+</head>
+<body class="tactical-grid">
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="/">
+      <img src="/assets/img/logo.png" alt="" width="34" height="34">
+      <span><span class="brand-title">CB Servers</span><span class="brand-sub">Community CoD</span></span>
+    </a>
+    <button class="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="nav">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+    <nav id="nav">
+      <a href="/">Home</a>
+      <a href="/launcher/" aria-current="page">Launcher</a>
+      <a href="/#servers">Servers</a>
+      <a href="/stats/">Stats</a>
+      <a href="https://docs.cbservers.xyz/" rel="noopener">Docs</a>
+      <a href="/discord" rel="noopener">Discord</a>
+      <a class="btn primary small" href="#download">Download</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero" id="download">
+    <div class="wrap">
+      <div class="hero-copy">
+        <p class="eyebrow">CB Servers Launcher</p>
+        <h1>Eighteen games.<br><span class="accent">One launcher.</span></h1>
+        <p class="lead">Install, update, verify and play the community clients for every Call of Duty from the 2003 original to Black Ops 4. Use the files you already own or let it download them.</p>
+        <div class="hero-actions">
+          <a class="btn primary" href="https://github.com/CBServers/updater/raw/main/updater/cb-launcher/cb-launcher.exe" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0 4-4m-4 4-4-4M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
+            Download for Windows
+          </a>
+          <a class="btn" href="https://docs.cbservers.xyz/launcher/install" rel="noopener">Install guide</a>
+          <span class="btn-note">Free and <a href="https://github.com/CBServers/cb-launcher" rel="noopener">open source</a>. Windows 10 or newer. Runs on Linux through <a href="https://docs.cbservers.xyz/launcher/linux" rel="noopener">Proton</a>.</span>
+        </div>
+        <p class="live-line" id="live-line" aria-live="polite">
+          <span class="dot" aria-hidden="true"></span>
+          <span><span class="num" id="live-online">–</span> launchers online</span>
+          <span class="sep">/</span>
+          <span><span class="num" id="live-ingame">–</span> in a game right now</span>
+        </p>
+      </div>
+      <div class="frame">
+        <img src="/assets/img/screens/library.webp" alt="The launcher library with every supported title" width="1280" height="800" fetchpriority="high">
+        <span class="c3"></span><span class="c4"></span>
+        <span class="tag">Library</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="features">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Features</p>
+          <h2>Everything between you and the game</h2>
+          <p>The launcher handles the setup, updates and housekeeping so the only button you need is Play.</p>
+        </div>
+      </div>
+      <div class="grid cols-4">
+        <div class="card">
+          <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></span>
+          <h3>Your files or ours</h3>
+          <p>Point it at a Steam or existing install, or download the game straight from our CDN.</p>
+        </div>
+        <div class="card">
+          <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-6.2-8.56"/><path d="M21 3v6h-6"/></svg></span>
+          <h3>Always current</h3>
+          <p>The launcher, every client and the game files update automatically. Hash-verified, resumable downloads.</p>
+        </div>
+        <div class="card">
+          <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 12 2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg></span>
+          <h3>Fast verification</h3>
+          <p>Something broke? Verify checks every file and replaces only what changed, in seconds rather than a reinstall.</p>
+        </div>
+        <div class="card">
+          <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg></span>
+          <h3>Manage content</h3>
+          <p>Pick which campaign, multiplayer, zombies and DLC pieces you keep installed. Deselect to free the space.</p>
+        </div>
+        <div class="card">
+          <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 2 7l10 5 10-5-10-5z"/><path d="m2 17 10 5 10-5M2 12l10 5 10-5"/></svg></span>
+          <h3>Mods and Workshop</h3>
+          <p>Browse the Steam Workshop for Black Ops 3 and hosted catalogs for other games. Custom maps install with one click.</p>
+        </div>
+        <div class="card">
+          <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
+          <h3>Friends and invites</h3>
+          <p>See what friends are playing and invite them into your match. Link Discord for rich presence, or use a launcher account with no Discord at all.</p>
+        </div>
+        <div class="card">
+          <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="6" rx="1"/><rect x="3" y="14" width="18" height="6" rx="1"/><path d="M7 7h.01M7 17h.01"/></svg></span>
+          <h3>Server browser</h3>
+          <p>Every game page has a live server list with map, mode, players and ping, so you can join without opening the game first.</p>
+        </div>
+        <div class="card">
+          <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94z"/></svg></span>
+          <h3>Fixes the boring parts</h3>
+          <p>Installs the Visual C++ and DirectX redistributables with one prompt, keeps a shared GUID across clients, and opens straight from <code>cbservers://</code> links.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="games">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Supported games</p>
+          <h2>From 2003 to Black Ops 4</h2>
+          <p>Each title runs on its community client. The launcher installs the client for you and, where a game has more than one, lets you choose.</p>
+        </div>
+        <a class="aside" href="https://docs.cbservers.xyz/games" rel="noopener">Per-game install docs &rarr;</a>
+      </div>
+      <div class="games">
+        <a class="game" href="https://docs.cbservers.xyz/games/cod1" style="--game-accent:#93a8bc"><img class="capsule" src="/assets/img/games/cod1/capsule.jpg" alt="" loading="lazy"><span class="bar"><span class="title">Call of Duty</span><span class="client">v1.1 / CoD1.1x</span></span></a>
+        <a class="game" href="https://docs.cbservers.xyz/games/coduo" style="--game-accent:#ededec"><img class="capsule" src="/assets/img/games/coduo/capsule.jpg" alt="" loading="lazy"><span class="bar"><span class="title">United Offensive</span><span class="client">v1.51 / CoDUO1.51x</span></span></a>
+        <a class="game" href="https://docs.cbservers.xyz/games/cod2x" style="--game-accent:#fadb9f"><img class="capsule" src="/assets/img/games/cod2x/capsule.jpg" alt="" loading="lazy"><span class="bar"><span class="title">Call of Duty 2</span><span class="client">CoD2x</span></span></a>
+        <a class="game" href="https://docs.cbservers.xyz/games/cod4x" style="--game-accent:#46D744"><img class="capsule" src="/assets/img/games/cod4x/capsule.jpg" alt="" loading="lazy"><span class="bar"><span class="title">Modern Warfare</span><span class="client">IW3x / CoD4x</span></span></a>
+        <a class="game" href="https://docs.cbservers.xyz/games/t4" style="--game-accent:#B94E14"><img class="capsule" src="/assets/img/games/t4/capsule.jpg" alt="" loading="lazy"><span class="bar"><span class="title">World at War</span><span class="client">T4 Plutonium</span></span></a>
+        <a class="game" href="https://docs.cbservers.xyz/games/iw4x" style="--game-accent:#FBC751"><img class="capsule" src="/assets/img/games/iw4x/capsule.jpg" alt="" loading="lazy"><span class="bar"><span class="title">Modern Warfare 2</span><span class="client">IW4x</span></span></a>
+        <a class="game" href="https://docs.cbservers.xyz/games/t5" style="--game-accent:#186AC6"><img class="capsule" src="/assets/img/games/t5/capsule.jpg" alt="" loading="lazy"><span class="bar"><span class="title">Black Ops</span><span class="client">T5 Plutonium</span></span></a>
+        <a class="game" href="https://docs.cbservers.xyz/games/iw5" style="--game-accent:#09FF00"><img class="capsule" src="/assets/img/games/iw5/capsule.jpg" alt="" loading="lazy"><span class="bar"><span class="title">Modern Warfare 3</span><span class="client">IW5 Plutonium</span></span></a>
+        <a class="game" href="https://docs.cbservers.xyz/games/t6" style="--game-accent:#FE890A"><img class="capsule" src="/assets/img/games/t6/capsule.jpg" alt="" loading="lazy"><span class="bar"><span class="title">Black Ops 2</span><span class="client">T6 Plutonium</span></span></a>
+        <a class="game" href="https://docs.cbservers.xyz/games/iw6x" style="--game-accent:#3B718C"><img class="capsule" src="/assets/img/games/iw6x/capsule.jpg" alt="" loading="lazy"><span class="bar"><span class="title">Ghosts</span><span class="client">IW6x</span></span></a>
+        <a class="game" href="https://docs.cbservers.xyz/games/s1x" style="--game-accent:#F9D406"><img class="capsule" src="/assets/img/games/s1x/capsule.jpg" alt="" loading="lazy"><span class="bar"><span class="title">Advanced Warfare</span><span class="client">S1x</span></span></a>
+        <a class="game" href="https://docs.cbservers.xyz/games/boiii" style="--game-accent:#F3751B"><img class="capsule" src="/assets/img/games/boiii/capsule.jpg" alt="" loading="lazy"><span class="bar"><span class="title">Black Ops 3</span><span class="client">BOIII</span></span></a>
+        <a class="game" href="https://docs.cbservers.xyz/games/iw7-mod" style="--game-accent:#FFFFFF"><img class="capsule" src="/assets/img/games/iw7-mod/capsule.jpg" alt="" loading="lazy"><span class="bar"><span class="title">Infinite Warfare</span><span class="client">IW7-Mod</span></span></a>
+        <a class="game" href="https://docs.cbservers.xyz/games/h1-mod" style="--game-accent:#46D744"><img class="capsule" src="/assets/img/games/h1-mod/capsule.jpg" alt="" loading="lazy"><span class="bar"><span class="title">MW Remastered</span><span class="client">H1-Mod</span></span></a>
+        <a class="game soon-item" href="https://docs.cbservers.xyz/games" style="--game-accent:#8C7A4B"><img class="capsule" src="/assets/img/games/s2x/capsule.jpg" alt="" loading="lazy"><span class="soon">Soon</span><span class="bar"><span class="title">World War II</span><span class="client">S2x</span></span></a>
+        <a class="game" href="https://docs.cbservers.xyz/games/bo4" style="--game-accent:#FE890A"><img class="capsule" src="/assets/img/games/bo4/capsule.jpg" alt="" loading="lazy"><span class="bar"><span class="title">Black Ops 4</span><span class="client">Project BO4</span></span></a>
+        <a class="game" href="https://docs.cbservers.xyz/games/h2-mod" style="--game-accent:#FBC751"><img class="capsule" src="/assets/img/games/h2-mod/capsule.jpg" alt="" loading="lazy"><span class="bar"><span class="title">MW2 Campaign Remastered</span><span class="client">H2-Mod</span></span></a>
+        <a class="game" href="https://docs.cbservers.xyz/games/hmw" style="--game-accent:#97838A"><img class="capsule" src="/assets/img/games/hmw-mod/capsule.jpg" alt="" loading="lazy"><span class="bar"><span class="title">HorizonMW</span><span class="client">HMW</span></span></a>
+      </div>
+    </div>
+  </section>
+
+  <section id="social">
+    <div class="wrap split">
+      <div>
+        <p class="eyebrow">Play together</p>
+        <h2>Friends, invites, rooms</h2>
+        <p class="lead">Presence and invites work across every client the launcher runs, whether or not the game itself has a friends list.</p>
+        <ul class="feature-list">
+          <li><span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><div><strong>Live presence</strong><span>Map, mode, server and player count for every friend in a game, in the launcher and on Discord.</span></div></li>
+          <li><span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2 11 13"/><path d="m22 2-7 20-4-9-9-4z"/></svg></span><div><strong>One-click invites</strong><span>Invite a friend and they land in your match, even if the game was not open yet. Friends of friends can join too.</span></div></li>
+          <li><span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span><div><strong>Community rooms</strong><span>A looking-for-group board and chat per game, plus direct messages, without leaving the launcher.</span></div></li>
+        </ul>
+      </div>
+      <div class="frame">
+        <img src="/assets/img/screens/friends.webp" alt="The Friends page of the launcher" width="1280" height="600" loading="lazy">
+        <span class="c3"></span><span class="c4"></span>
+        <span class="tag">Friends</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="install">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Getting started</p>
+          <h2>Four steps to Play</h2>
+        </div>
+        <a class="aside" href="https://docs.cbservers.xyz/launcher/install" rel="noopener">Full install guide &rarr;</a>
+      </div>
+      <div class="steps">
+        <div class="step"><h3>Download</h3><p>Grab <code>cb-launcher.exe</code> and run it from any folder. There is no installer, and it keeps itself updated.</p></div>
+        <div class="step"><h3>Pick a game</h3><p>Open the Library and choose a title. Games you already have installed are detected automatically.</p></div>
+        <div class="step"><h3>Set up</h3><p>Use an existing install, or download the game and choose which content to include.</p></div>
+        <div class="step"><h3>Play</h3><p>Hit Play, pick a mode if the game has more than one, and you are in. Verify is one click if anything breaks.</p></div>
+      </div>
+      <p class="notice" style="margin-top:24px">The launcher is not affiliated with or endorsed by IW4x, Plutonium, AlterWare, Aurora, HorizonMW or the other client projects. Please bring launcher questions to <a href="/discord" rel="noopener">our Discord</a>, not to the client maintainers.</p>
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <div class="wrap">
+      <p class="eyebrow">Free and open source</p>
+      <h2>Get the launcher</h2>
+      <div class="hero-actions">
+        <a class="btn primary" href="https://github.com/CBServers/updater/raw/main/updater/cb-launcher/cb-launcher.exe" rel="noopener">Download for Windows</a>
+        <a class="btn" href="https://docs.cbservers.xyz/launcher/faq" rel="noopener">Read the FAQ</a>
+        <a class="btn" href="https://github.com/CBServers/cb-launcher" rel="noopener">Source on GitHub</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <a class="brand" href="/"><img src="/assets/img/logo.png" alt="" width="34" height="34"><span><span class="brand-title">CB Servers</span><span class="brand-sub">Community CoD</span></span></a>
+      <p>A free, community-run project for Call of Duty custom clients. Not affiliated with or endorsed by Activision, IW4x, Plutonium, AlterWare, Aurora or HorizonMW.</p>
+    </div>
+    <div>
+      <h4>Site</h4>
+      <ul>
+        <li><a href="/launcher/">Launcher</a></li>
+        <li><a href="/#servers">Servers</a></li>
+        <li><a href="/stats/">Statistics</a></li>
+        <li><a href="https://docs.cbservers.xyz/" rel="noopener">Documentation</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Elsewhere</h4>
+      <ul>
+        <li><a href="/discord" rel="noopener">Discord</a></li>
+        <li><a href="https://github.com/CBServers" rel="noopener">GitHub</a></li>
+        <li><a href="/x" rel="noopener">X</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap foot-bottom">
+    <span>&copy; <span id="year">2026</span> CB Servers</span>
+    <span><a href="/privacy/">Privacy</a> &middot; <a href="/terms/">Terms</a></span>
+  </div>
+</footer>
+
+<script src="/assets/site.js" defer></script>
+</body>
+</html>
