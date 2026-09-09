@@ -271,7 +271,11 @@
         $('h-ingame').textContent = fmt(inGame);
         $('h-idle').textContent = fmt(s.idle);
         if (s.peak24h) {
-            $('h-peakline').textContent = `That is ${pct(s.online, s.peak24h.n)}% of the peak for the last 24 hours, which was ${fmt(s.peak24h.n)} at ${fmtWhen(s.peak24h.ts)}.` +
+            // The live count can outrun the minute-sampled peak by a few; never report over 100%.
+            const peak = Math.max(s.peak24h.n, s.online);
+            $('h-peakline').textContent = (s.online >= s.peak24h.n
+                ? `That is a new high for the last 24 hours.`
+                : `That is ${pct(s.online, peak)}% of the peak for the last 24 hours, which was ${fmt(s.peak24h.n)} at ${fmtWhen(s.peak24h.ts)}.`) +
                 (s.since ? ` Tracking since ${fmtDayYear(s.since)}.` : '');
         }
         $('t-peak24').textContent = s.peak24h ? fmt(s.peak24h.n) : '–';
