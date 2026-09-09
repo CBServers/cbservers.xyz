@@ -137,7 +137,7 @@ h3 { font-size: 19px; font-weight: 600; letter-spacing: 0.06em; }
   font-family: var(--font-display); font-weight: 600; font-size: 15px; letter-spacing: 0.08em; text-transform: uppercase;
   color: var(--text-2); padding: 8px 12px; border-radius: var(--radius); border: 1px solid transparent;
 }
-.top nav a:hover { color: var(--text-bright); background: var(--surface); }
+.top nav a:not(.btn):hover { color: var(--text-bright); background: var(--surface); }
 .top nav a[aria-current] { color: var(--accent); border-color: rgba(255, 160, 46, 0.35); background: linear-gradient(135deg, rgba(255, 160, 46, 0.16), rgba(255, 160, 46, 0.05)); }
 .top nav .btn { margin-left: 10px; }
 .nav-toggle { display: none; background: none; border: 1px solid var(--border-hi); border-radius: var(--radius); color: var(--text); width: 40px; height: 40px; cursor: pointer; }
