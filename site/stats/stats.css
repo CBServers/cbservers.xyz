@@ -87,7 +87,7 @@ h1 { font-size: 34px; margin: 0 0 12px; }
 .bars { display: flex; flex-direction: column; gap: 6px; }
 .bar-row { display: grid; grid-template-columns: 120px 1fr 56px; align-items: center; gap: 10px; font-size: 13px; }
 .bar-row .name { color: var(--text-2); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.bar-row .track { height: 10px; background: var(--grid); border-radius: 4px; overflow: hidden; }
+.bar-row .track { height: 10px; background: var(--surface-hi); border-radius: 4px; overflow: hidden; }
 .bar-row .fill { height: 100%; background: var(--series-1); border-radius: 4px; }
 .bar-row .val { text-align: right; font-family: var(--font-mono); font-variant-numeric: tabular-nums; }
 .bars .none { color: var(--muted); font-size: 13px; }
