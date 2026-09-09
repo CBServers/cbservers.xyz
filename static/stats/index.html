@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CB Servers launcher statistics</title>
+<meta name="description" content="Live and historical player counts for the CB Servers launcher: launchers online, players per game, unique launchers per day, week and month, and public server populations.">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#0a0a0f">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon-32x32.png" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" href="stats.css">
+</head>
+<body>
+<header class="top">
+  <a class="brand" href="/"><img src="/apple-touch-icon.png" alt="" width="28" height="28"><span>CB Servers</span></a>
+  <nav>
+    <a href="/launcher/">Launcher</a>
+    <a href="/downloads/">Downloads</a>
+    <a href="/guides/">Guides</a>
+    <a href="/stats/" aria-current="page">Stats</a>
+    <a href="https://discord.gg/WyJQCwCCGW" rel="noopener">Discord</a>
+  </nav>
+</header>
+
+<main>
+  <section class="hero">
+    <p class="crumbs">CB Servers / Statistics</p>
+    <h1>Launcher statistics</h1>
+    <p class="headline" id="headline" aria-live="polite">
+      <strong class="num" id="h-online">–</strong> launchers online,
+      <strong class="num" id="h-ingame">–</strong> in a game and
+      <strong class="num" id="h-idle">–</strong> idle.
+    </p>
+    <p class="sub" id="h-peakline">Waiting for the first sample.</p>
+  </section>
+
+  <section class="tiles" aria-label="Headline numbers">
+    <div class="tile"><span class="label">Peak, last 24 hours</span><span class="value" id="t-peak24">–</span><span class="note" id="t-peak24-when"></span></div>
+    <div class="tile"><span class="label">All-time peak</span><span class="value" id="t-peakall">–</span><span class="note" id="t-peakall-when"></span></div>
+    <div class="tile"><span class="label">Unique launchers today</span><span class="value" id="t-dau">–</span><span class="note" id="t-dau-note"></span></div>
+    <div class="tile"><span class="label">Unique, last 7 days</span><span class="value" id="t-wau">–</span><span class="note" id="t-wau-note"></span></div>
+    <div class="tile"><span class="label">Unique, last 30 days</span><span class="value" id="t-mau">–</span><span class="note" id="t-mau-note"></span></div>
+    <div class="tile"><span class="label">New launchers today</span><span class="value" id="t-new">–</span><span class="note" id="t-new-note"></span></div>
+    <div class="tile wide"><span class="label">Launchers online, last 24 hours</span><span class="value" id="t-spark-online-now">–</span><div class="spark"><canvas id="spark-online" aria-label="Launchers online over the last 24 hours" role="img"></canvas></div></div>
+    <div class="tile wide"><span class="label">Players in public servers, all clients</span><span class="value" id="t-svr-now">–</span><div class="spark"><canvas id="spark-servers" aria-label="Players in public servers over the last 24 hours" role="img"></canvas></div><span class="note" id="t-svr-note"></span></div>
+  </section>
+
+  <div class="controls">
+    <div class="tabs" role="tablist" aria-label="Sections">
+      <button role="tab" data-tab="overview" aria-selected="true">Overview</button>
+      <button role="tab" data-tab="games">Games</button>
+      <button role="tab" data-tab="servers">Servers</button>
+      <button role="tab" data-tab="uniques">Uniques</button>
+    </div>
+    <div class="range" id="range-series" role="group" aria-label="Time range">
+      <span class="range-label">Range</span>
+      <button data-range="6h">6h</button>
+      <button data-range="12h">12h</button>
+      <button data-range="24h" aria-pressed="true">24h</button>
+      <button data-range="48h">48h</button>
+      <button data-range="7d">7d</button>
+      <button data-range="30d">30d</button>
+      <button data-range="all">All</button>
+    </div>
+    <div class="range" id="range-uniques" role="group" aria-label="Days shown" hidden>
+      <span class="range-label">Days</span>
+      <button data-range="30d" aria-pressed="true">30</button>
+      <button data-range="90d">90</button>
+      <button data-range="all">All</button>
+    </div>
+  </div>
+
+  <section class="panel" id="tab-overview" role="tabpanel">
+    <div class="card">
+      <h2>Launchers online <span class="when" data-when></span></h2>
+      <div class="chart"><canvas id="c-overview" role="img" aria-label="Stacked area of launchers in a game and idle over time"></canvas></div>
+      <p class="caption" id="cap-overview"></p>
+    </div>
+    <div class="card">
+      <h2>Players in public servers <span class="when" data-when></span></h2>
+      <div class="chart short"><canvas id="c-overview-servers" role="img" aria-label="Players in public servers over time"></canvas></div>
+      <p class="caption">Every public server the servers browser tracks, all clients, not only launcher users. Never added to the launcher numbers.</p>
+    </div>
+    <div class="card">
+      <h2>Summary over the range</h2>
+      <div class="table-wrap"><table id="tbl-overview"><thead><tr><th>Series</th><th class="r">Now</th><th class="r">Average</th><th class="r">High</th><th class="r">Low</th></tr></thead><tbody></tbody></table></div>
+    </div>
+  </section>
+
+  <section class="panel" id="tab-games" role="tabpanel" hidden>
+    <div class="card">
+      <h2>Launchers by game <span class="when" data-when></span></h2>
+      <div class="chart tall"><canvas id="c-games" role="img" aria-label="Stacked area of launchers per game over time"></canvas></div>
+      <p class="caption" id="cap-games"></p>
+    </div>
+    <div class="grid2">
+      <div class="card">
+        <h2>By game right now</h2>
+        <div class="bars" id="bars-games"></div>
+      </div>
+      <div class="card">
+        <h2>By game over the range</h2>
+        <div class="table-wrap"><table id="tbl-games"><thead><tr><th>Game</th><th class="r">Now</th><th class="r">Average</th><th class="r">High</th><th class="r">All-time peak</th></tr></thead><tbody></tbody></table></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="panel" id="tab-servers" role="tabpanel" hidden>
+    <div class="card">
+      <h2>Public server players by game <span class="when" data-when></span></h2>
+      <div class="chart tall"><canvas id="c-servers" role="img" aria-label="Stacked area of players in public servers per game over time"></canvas></div>
+      <p class="caption" id="cap-servers"></p>
+    </div>
+    <div class="card">
+      <h2>Servers online <span class="when" data-when></span></h2>
+      <div class="chart short"><canvas id="c-servers-count" role="img" aria-label="Number of public servers over time"></canvas></div>
+      <p class="caption">A server counts whether or not anyone is on it.</p>
+    </div>
+    <div class="grid2">
+      <div class="card">
+        <h2>By game right now</h2>
+        <div class="bars" id="bars-servers"></div>
+      </div>
+      <div class="card">
+        <h2>By game over the range</h2>
+        <div class="table-wrap"><table id="tbl-servers"><thead><tr><th>Game</th><th class="r">Players</th><th class="r">Servers</th><th class="r">Avg players</th><th class="r">High</th></tr></thead><tbody></tbody></table></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="panel" id="tab-uniques" role="tabpanel" hidden>
+    <div class="card">
+      <h2>Unique launchers per day</h2>
+      <div class="chart"><canvas id="c-uniques" role="img" aria-label="Daily, weekly and monthly unique launchers per day"></canvas></div>
+      <p class="caption">Daily is launchers seen that UTC day; 7-day and 30-day are unique launchers over the trailing window ending that day. Today is partial.</p>
+    </div>
+    <div class="card">
+      <h2>New launchers per day</h2>
+      <div class="chart short"><canvas id="c-new" role="img" aria-label="Launchers seen for the first time, per day"></canvas></div>
+      <p class="caption">A launcher seen for the first time ever. Reinstalls and lost device keys count as new.</p>
+    </div>
+    <div class="card">
+      <h2>By day</h2>
+      <div class="table-wrap"><table id="tbl-uniques"><thead><tr><th>Day</th><th class="r">Daily</th><th class="r">7-day</th><th class="r">30-day</th><th class="r">New</th><th>Busiest game</th></tr></thead><tbody></tbody></table></div>
+    </div>
+  </section>
+
+  <p class="empty" id="empty" hidden>Collecting data. The first samples land within a minute of the service starting.</p>
+  <p class="error" id="error" hidden></p>
+
+  <footer class="foot">
+    <p id="foot-method">Counts are unique launcher installs identified by a salted hash of each launcher's device key. No IP addresses are stored. Launchers running offline are not counted.</p>
+    <p id="foot-sampling"></p>
+    <p>Public server numbers come from <a href="https://gameserve.rs/" rel="noopener">GameServe.rs</a> and the BO4 lobby service. Every figure on this page refreshes every 60 seconds.</p>
+  </footer>
+</main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js" integrity="sha512-CQBWl4fJHWbryGE+Pc7UAxWMUMNMWzWxF4SQo9CgkJIN1kx6djDQZjh3Y8SZ1d+6I+1zze6Z7kHXO7q3UyZAWw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="stats.js"></script>
+</body>
+</html>

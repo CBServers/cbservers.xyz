@@ -126,10 +126,14 @@ menu:
       name: Guides
       url: /guides/
       weight: 30
+    - identifier: Stats
+      name: Stats
+      url: /stats/
+      weight: 40
     - identifier: Discord
       name: Discord
       url: https://discord.gg/WyJQCwCCGW
-      weight: 40
+      weight: 50
 # Read: https://github.com/adityatelange/hugo-PaperMod/wiki/FAQs#using-hugos-syntax-highlighter-chroma
 pygmentsUseClasses: true
 markup:
