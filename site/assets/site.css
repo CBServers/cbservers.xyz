@@ -169,6 +169,11 @@ section + section { border-top: 1px solid var(--border); }
 .live-line .dot { width: 8px; height: 8px; border-radius: 2px; background: var(--good); }
 .live-line .num { color: var(--text-bright); font-weight: 500; }
 .live-line .sep { color: var(--dim); }
+.hero-center { padding: 112px 0 96px; text-align: center; }
+.hero-center::before { background: radial-gradient(ellipse 60% 70% at 50% 30%, rgba(255, 160, 46, 0.085), transparent 65%); }
+.hero-center .wrap { grid-template-columns: minmax(0, 1fr); justify-items: center; }
+.hero-center .eyebrow, .hero-center .hero-actions, .hero-center .live-line { justify-content: center; }
+.hero-center .lead { margin-left: auto; margin-right: auto; }
 
 /* HUD frame around a screenshot */
 .frame { position: relative; padding: 12px; }
@@ -289,6 +294,7 @@ span.server-connect:hover { border-color: var(--border-hi); color: var(--muted);
   color: var(--accent-contrast); background: var(--warn);
 }
 .game.soon-item img.capsule { filter: grayscale(1) brightness(0.6); }
+.games.teaser { grid-template-columns: repeat(3, 1fr); }
 
 /* Steps */
 .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; counter-reset: step; }
@@ -351,6 +357,9 @@ footer p { margin: 10px 0 0; color: var(--muted); font-size: 13px; max-width: 46
   .hero { padding: 56px 0 48px; }
   .grid.cols-3, .grid.cols-4, .stat-strip, .steps { grid-template-columns: 1fr; }
   .games { grid-template-columns: repeat(3, 1fr); gap: 10px; }
+  .hero-center { padding: 64px 0 56px; }
+  .hero-center .hero-actions, .cta-band .hero-actions { flex-direction: column; align-items: stretch; width: 100%; max-width: 320px; margin-left: auto; margin-right: auto; }
+  .hero-center .live-line .sep { display: none; }
   footer .wrap { grid-template-columns: 1fr; }
   .server { grid-template-columns: 1fr 1fr; }
   .server-game { grid-column: 1 / 3; }

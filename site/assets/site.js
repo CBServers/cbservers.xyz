@@ -2,7 +2,7 @@
   'use strict';
 
   const params = new URLSearchParams(location.search);
-  const SOCIAL = params.get('social') || 'https://social.cbservers.xyz';
+  const SOCIAL = params.get('social') || 'https://social.cbservers.dev';
   const $ = id => document.getElementById(id);
   const fmt = n => (n === null || n === undefined) ? '–' : Number(n).toLocaleString();
   const set = (id, text) => { const el = $(id); if (el) el.textContent = text; };
@@ -18,6 +18,13 @@
     return d.toLocaleDateString(undefined, { month: 'short', day: 'numeric', year: 'numeric' });
   };
 
+  // The home hero line mixes the summary and the server feeds, so it hides only when every source it shows has failed.
+  let summaryDown = false, serversDown = false;
+  function updateLiveLine() {
+    const line = $('live-line');
+    if (line) line.hidden = summaryDown && (serversDown || !$('live-ours'));
+  }
+
   // Hero line and the stats strip share one summary call.
   async function loadSummary() {
     if (!$('live-online') && !$('s-online')) return;
@@ -28,19 +35,17 @@
       const players = s.servers ? s.servers.players : null;
       set('live-online', fmt(latest.online));
       set('live-ingame', fmt(inGame));
-      set('live-players', fmt(players));
       set('s-online', fmt(latest.online));
       set('s-online-note', s.peak24h ? `24h peak ${fmt(s.peak24h.n)}` : '');
-      set('s-ingame', fmt(inGame));
-      set('s-ingame-note', latest.online ? `${fmt(latest.idle)} idle` : '');
       set('s-players', fmt(players));
       set('s-players-note', s.servers ? `across ${fmt(s.servers.servers)} servers` : '');
       set('s-peak', s.peakAll ? fmt(s.peakAll.n) : '–');
       set('s-peak-note', s.peakAll ? fmtWhen(s.peakAll.ts) : '');
+      summaryDown = false;
     } catch (e) {
-      const line = $('live-line');
-      if (line) line.hidden = true;
+      summaryDown = true;
     }
+    updateLiveLine();
   }
 
   // Hosted servers: each group renders rows from its status feed (brad.stream game-server status API).
@@ -85,7 +90,7 @@
   async function loadServers() {
     const groups = [...document.querySelectorAll('.server-group[data-source]')];
     if (!groups.length) return;
-    let total = 0, any = false;
+    let total = 0, up = 0, count = 0, any = false;
     await Promise.all(groups.map(async group => {
       const list = group.querySelector('[data-list]');
       try {
@@ -95,12 +100,19 @@
         list.innerHTML = servers.map(x => serverRow(x, group.dataset.features || '', group.dataset.host || '')).join('');
         any = true;
         total += servers.reduce((n, s) => n + (s.isOnline ? (s.currentPlayers || 0) : 0), 0);
+        up += servers.filter(s => s.isOnline).length;
+        count += servers.length;
       } catch (e) {
         list.innerHTML = '<p class="servers-empty">Status unavailable right now.</p>';
       }
     }));
     wireCopy(document.getElementById('servers'));
-    set('servers-updated', any ? `${fmt(total)} playing on our servers right now` : 'Server status unavailable');
+    set('servers-updated', any ? `${fmt(up)} of ${fmt(count)} servers online` : 'Server status unavailable');
+    set('live-ours', any ? fmt(total) : '–');
+    set('s-ours', any ? fmt(total) : '–');
+    set('s-ours-note', any ? `on ${fmt(up)} servers` : '');
+    serversDown = !any;
+    updateLiveLine();
   }
 
   function wireCopy(scope) {

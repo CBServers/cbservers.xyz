@@ -4,7 +4,7 @@
     'use strict';
 
     const params = new URLSearchParams(location.search);
-    const API = (params.get('api') || 'https://social.cbservers.xyz').replace(/\/$/, '');
+    const API = (params.get('api') || 'https://social.cbservers.dev').replace(/\/$/, '');
     const SUMMARY_MS = 30_000;
     const SERIES_MS = 60_000;
     const MAX_COLORED = 8;   // categorical slots; everything past them folds into Other

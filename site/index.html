@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>CB Servers</title>
-<meta name="description" content="CB Servers is a community for Call of Duty custom clients: one launcher for every game from CoD 1 to Black Ops 4, plus trickshot servers we host ourselves.">
+<meta name="description" content="CB Servers is a community for the classic COD games: trickshot and gun game servers we host ourselves, plus a launcher for every game from CoD 1 to Black Ops 4.">
 <meta name="color-scheme" content="dark">
 <meta name="theme-color" content="#0a0c0a">
 <meta property="og:title" content="CB Servers">
-<meta property="og:description" content="Every Call of Duty, one launcher. Plus the trickshot servers we host.">
+<meta property="og:description" content="Classic COD, played together. Our servers, our launcher, our community.">
 <meta property="og:image" content="https://cbservers.xyz/assets/img/og.png">
 <meta property="og:url" content="https://cbservers.xyz/">
 <meta name="twitter:card" content="summary_large_image">
@@ -42,63 +42,31 @@
 </header>
 
 <main>
-  <section class="hero">
+  <section class="hero hero-center">
     <div class="wrap">
       <div class="hero-copy">
-        <p class="eyebrow">Community Call of Duty</p>
-        <h1>Every Call of Duty.<br><span class="accent">One launcher.</span></h1>
-        <p class="lead">CB Servers keeps the classic Call of Duty games playable. Our launcher installs, updates and runs the community clients for eighteen titles, and we host our own servers to play on.</p>
+        <h1>Classic COD,<br><span class="accent">played together.</span></h1>
+        <p class="lead">CB Servers is a community built around the classic COD games. We host trickshot and gun game servers across the community clients, and we make the launcher that gets you into them.</p>
         <div class="hero-actions">
-          <a class="btn primary" href="/launcher/#download">
+          <a class="btn" href="#servers">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="6" rx="1"/><rect x="3" y="14" width="18" height="6" rx="1"/><path d="M7 7h.01M7 17h.01"/></svg>
+            Browse servers
+          </a>
+          <a class="btn" href="/discord" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            Join the Discord
+          </a>
+          <a class="btn" href="/launcher/">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0 4-4m-4 4-4-4M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
             Get the launcher
           </a>
-          <a class="btn" href="/discord" rel="noopener">Join the Discord</a>
-          <span class="btn-note">Free and open source. Windows 10 or newer, Linux through Proton.</span>
         </div>
         <p class="live-line" id="live-line" aria-live="polite">
           <span class="dot" aria-hidden="true"></span>
+          <span><span class="num" id="live-ours">–</span> playing on our servers</span>
+          <span class="sep">/</span>
           <span><span class="num" id="live-online">–</span> launchers online</span>
-          <span class="sep">/</span>
-          <span><span class="num" id="live-ingame">–</span> in a game</span>
-          <span class="sep">/</span>
-          <span><span class="num" id="live-players">–</span> players on public servers</span>
         </p>
-      </div>
-      <div class="frame">
-        <img src="/assets/img/screens/library.webp" alt="The CB Servers launcher library, showing every supported Call of Duty title" width="1280" height="800" fetchpriority="high">
-        <span class="c3"></span><span class="c4"></span>
-        <span class="tag">Launcher / Library</span>
-      </div>
-    </div>
-  </section>
-
-  <section id="about">
-    <div class="wrap">
-      <div class="section-head">
-        <div>
-          <h2>What we do</h2>
-        </div>
-      </div>
-      <div class="grid cols-3">
-        <a class="card chamfer" href="/launcher/">
-          <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z"/><path d="m10 8 5 4-5 4z"/></svg></span>
-          <h3>The launcher</h3>
-          <p>One place to install, update, verify and play every supported client. Works with the game files you already own or downloads them for you.</p>
-          <span class="more">Features and download</span>
-        </a>
-        <a class="card chamfer" href="#servers">
-          <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="6" rx="1"/><rect x="3" y="14" width="18" height="6" rx="1"/><path d="M7 7h.01M7 17h.01"/></svg></span>
-          <h3>Our servers</h3>
-          <p>Trickshot and custom gun game servers on the clients we support, with custom weapons, afterhit, save and load, and commands built around each mode.</p>
-          <span class="more">See the server list</span>
-        </a>
-        <a class="card chamfer" href="/discord" rel="noopener">
-          <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
-          <h3>The community</h3>
-          <p>Support, clips, custom maps and people to play with. The Discord is where releases, server changes and help all happen.</p>
-          <span class="more">Join on Discord</span>
-        </a>
       </div>
     </div>
   </section>
@@ -110,7 +78,7 @@
           <h2>Our servers</h2>
           <p>Trickshot and custom gun game servers across the clients the launcher supports. Copy a connect line into the in-game console, or find them under Servers in the launcher.</p>
         </div>
-        <span class="aside" id="servers-updated">Live counts load in a moment.</span>
+        <span class="aside" id="servers-updated">Status loads in a moment.</span>
       </div>
       <div class="server-groups">
         <div class="server-group" data-source="https://servers.brad.stream/api/status" data-features="Save/Load &amp; OOM">
@@ -131,23 +99,20 @@
 
   <section id="launcher">
     <div class="wrap split">
-      <div class="frame">
-        <img src="/assets/img/screens/game.webp" alt="A game page in the launcher with play, verify and mods controls" width="1280" height="800" loading="lazy">
-        <span class="c3"></span><span class="c4"></span>
-        <span class="tag">Launcher / Game page</span>
-      </div>
       <div>
         <h2>The launcher</h2>
-        <p class="lead">Point it at a Steam install or let it download the files. It keeps the client and the game current, verifies what you have and launches straight into the mode you pick.</p>
-        <ul class="feature-list">
-          <li><span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-6.2-8.56"/><path d="M21 3v6h-6"/></svg></span><div><strong>Always up to date</strong><span>Clients and game files update in the background, with fast hash-based verification when something breaks.</span></div></li>
-          <li><span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></span><div><strong>Friends and invites</strong><span>See who is playing what, invite people straight into your match, and use Discord or a launcher account, your choice.</span></div></li>
-          <li><span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 2 7l10 5 10-5-10-5z"/><path d="m2 17 10 5 10-5M2 12l10 5 10-5"/></svg></span><div><strong>Mods and custom maps</strong><span>Browse the Steam Workshop for Black Ops 3 and hosted catalogs for other games, then install with one click.</span></div></li>
-        </ul>
+        <p class="lead">Our launcher installs, updates and runs the community clients for eighteen COD titles, with friends, invites and mods built in. It is the easiest way onto our servers.</p>
         <div class="hero-actions">
-          <a class="btn primary" href="/launcher/">All features</a>
-          <a class="btn" href="https://docs.cbservers.xyz/launcher" rel="noopener">Read the docs</a>
+          <a class="btn" href="/launcher/">See the launcher</a>
         </div>
+      </div>
+      <div class="games teaser">
+          <a class="game" href="/launcher/#games" style="--game-accent:#FBC751"><img class="capsule" src="/assets/img/games/iw4x/capsule.jpg" alt="" loading="lazy"><span class="bar"><span class="title">Modern Warfare 2</span></span></a>
+          <a class="game" href="/launcher/#games" style="--game-accent:#FE890A"><img class="capsule" src="/assets/img/games/t6/capsule.jpg" alt="" loading="lazy"><span class="bar"><span class="title">Black Ops 2</span></span></a>
+          <a class="game" href="/launcher/#games" style="--game-accent:#F3751B"><img class="capsule" src="/assets/img/games/boiii/capsule.jpg" alt="" loading="lazy"><span class="bar"><span class="title">Black Ops 3</span></span></a>
+          <a class="game" href="/launcher/#games" style="--game-accent:#09FF00"><img class="capsule" src="/assets/img/games/iw5/capsule.jpg" alt="" loading="lazy"><span class="bar"><span class="title">Modern Warfare 3</span></span></a>
+          <a class="game" href="/launcher/#games" style="--game-accent:#3B718C"><img class="capsule" src="/assets/img/games/iw6x/capsule.jpg" alt="" loading="lazy"><span class="bar"><span class="title">Ghosts</span></span></a>
+          <a class="game" href="/launcher/#games" style="--game-accent:#FFFFFF"><img class="capsule" src="/assets/img/games/iw7-mod/capsule.jpg" alt="" loading="lazy"><span class="bar"><span class="title">Infinite Warfare</span></span></a>
       </div>
     </div>
   </section>
@@ -161,9 +126,9 @@
         <a class="aside" href="/stats/">Full statistics and history &rarr;</a>
       </div>
       <div class="stat-strip">
-        <div class="stat"><span class="label">Launchers online</span><span class="value accent" id="s-online">–</span><span class="note" id="s-online-note"></span></div>
-        <div class="stat"><span class="label">In a game</span><span class="value" id="s-ingame">–</span><span class="note" id="s-ingame-note"></span></div>
-        <div class="stat"><span class="label">Players on public servers</span><span class="value" id="s-players">–</span><span class="note" id="s-players-note"></span></div>
+        <div class="stat"><span class="label">On our servers</span><span class="value accent" id="s-ours">–</span><span class="note" id="s-ours-note"></span></div>
+        <div class="stat"><span class="label">Launchers online</span><span class="value" id="s-online">–</span><span class="note" id="s-online-note"></span></div>
+        <div class="stat"><span class="label">On all public servers</span><span class="value" id="s-players">–</span><span class="note" id="s-players-note"></span></div>
         <div class="stat"><span class="label">All-time peak launchers</span><span class="value" id="s-peak">–</span><span class="note" id="s-peak-note"></span></div>
       </div>
     </div>
@@ -173,8 +138,18 @@
     <div class="wrap">
       <h2>Get started</h2>
       <div class="hero-actions">
-        <a class="btn primary" href="/launcher/#download">Get the launcher</a>
-        <a class="btn" href="/discord" rel="noopener">Join the Discord</a>
+        <a class="btn" href="#servers">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="6" rx="1"/><rect x="3" y="14" width="18" height="6" rx="1"/><path d="M7 7h.01M7 17h.01"/></svg>
+          Browse servers
+        </a>
+        <a class="btn" href="/discord" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          Join the Discord
+        </a>
+        <a class="btn" href="/launcher/">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0 4-4m-4 4-4-4M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
+          Get the launcher
+        </a>
       </div>
     </div>
   </section>
