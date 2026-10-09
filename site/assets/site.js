@@ -61,26 +61,30 @@
     IW7: { key: 'iw7-mod', label: 'IW7-Mod', name: 'Infinite Warfare', accent: '#FFFFFF' },
     H1: { key: 'h1-mod', label: 'H1-Mod', name: 'MW Remastered', accent: '#46D744' },
     H2M: { key: 'hmw-mod', label: 'HMW', name: 'HorizonMW', accent: '#97838A' },
+    S2: { key: 's2x', label: 'S2x', name: 'World War II', accent: '#8C7A4B', hidden: true },
   };
-  const MODES = { dm: 'Free for all', sd: 'Search and destroy', war: 'Team deathmatch', gun: 'Gun game', koth: 'Hardpoint', dom: 'Domination', conf: 'Kill confirmed' };
+  // IW4MAdmin's Reference.Game enum, indexed by value; the feed sends the number.
+  const GAME_CODES = ['UKN', 'IW3', 'IW4', 'IW5', 'IW6', 'T4', 'T5', 'T6', 'T7', 'SHG1', 'CSGO', 'H1', 'L4D2', 'H2M', 'IW7', 'S2'];
+  const gameCode = s => GAME_CODES[s.game] || String(s.game);
+  const sentence = s => s ? s.charAt(0).toUpperCase() + s.slice(1).toLowerCase() : '';
   const stripColors = s => String(s || '').replace(/\^[0-9a-zA-Z:;.]/g, '').split('|')[0].replace(/\s+/g, ' ').trim();
   const esc = s => String(s).replace(/[&<>"]/g, ch => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[ch]));
   const isPublic = addr => addr && !/^(127\.|0\.0\.0\.0|localhost$|10\.|192\.168\.)/.test(addr);
   const svg = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>';
 
   function serverRow(s, features, host) {
-    const g = GAMES[s.game] || { key: '', label: s.game, name: s.game, accent: '#FFA02E' };
+    const code = gameCode(s);
+    const g = GAMES[code] || { key: '', label: code, name: code, accent: '#FFA02E' };
     const logo = g.key ? `<img src="/assets/img/games/${g.key}/icon.png" alt="${esc(g.name)}">` : '';
-    const address = isPublic(s.listenAddress) ? s.listenAddress : host;
-    const connect = `connect ${address}:${s.listenPort}`;
-    const players = s.currentPlayers || 0;
-    const mode = MODES[s.gameMode] || (s.gameMode || '').toUpperCase();
-    const map = s.map ? (s.map.alias || s.map.name) : '';
-    return `<div class="server${s.isOnline ? '' : ' offline'}" style="--game-accent:${g.accent}">
+    const address = isPublic(s.ipAddress) ? s.ipAddress : host;
+    const connect = `connect ${address}:${s.port}`;
+    const players = s.clientCount || 0;
+    const mode = sentence(s.gameType);
+    return `<div class="server${s.online ? '' : ' offline'}" style="--game-accent:${g.accent}">
       <div class="server-game">${logo}<span>${esc(g.label)}</span></div>
       <div class="server-name">${esc(stripColors(s.name))}<small>${esc([mode, features].filter(Boolean).join(', '))}</small></div>
-      <div class="server-map">${s.isOnline ? esc(map || '–') : 'offline'}</div>
-      <div class="server-players${players > 0 ? ' hot' : ''}"><span class="n">${fmt(players)}</span> / ${fmt(s.maxPlayers)}</div>
+      <div class="server-map">${s.online ? esc(s.map || '–') : 'offline'}</div>
+      <div class="server-players${players > 0 ? ' hot' : ''}"><span class="n">${fmt(players)}</span> / ${fmt(s.maxClients)}</div>
       ${address
         ? `<button class="server-connect" type="button" data-copy="${esc(connect)}">${svg}${esc(connect)}</button>`
         : '<span class="server-connect muted">Find it in the in-game browser</span>'}
@@ -94,13 +98,14 @@
     await Promise.all(groups.map(async group => {
       const list = group.querySelector('[data-list]');
       try {
-        const servers = await getJson(group.dataset.source);
-        if (!Array.isArray(servers) || !servers.length) { list.innerHTML = '<p class="servers-empty">No servers listed.</p>'; return; }
-        servers.sort((a, b) => (a.game === 'T7' ? 0 : 1) - (b.game === 'T7' ? 0 : 1));
+        const feed = await getJson(group.dataset.source);
+        const servers = Array.isArray(feed) ? feed.filter(s => !(GAMES[gameCode(s)] || {}).hidden) : [];
+        if (!servers.length) { list.innerHTML = '<p class="servers-empty">No servers listed.</p>'; return; }
+        servers.sort((a, b) => (gameCode(a) === 'T7' ? 0 : 1) - (gameCode(b) === 'T7' ? 0 : 1));
         list.innerHTML = servers.map(x => serverRow(x, group.dataset.features || '', group.dataset.host || '')).join('');
         any = true;
-        total += servers.reduce((n, s) => n + (s.isOnline ? (s.currentPlayers || 0) : 0), 0);
-        up += servers.filter(s => s.isOnline).length;
+        total += servers.reduce((n, s) => n + (s.online ? (s.clientCount || 0) : 0), 0);
+        up += servers.filter(s => s.online).length;
         count += servers.length;
       } catch (e) {
         list.innerHTML = '<p class="servers-empty">Status unavailable right now.</p>';
