@@ -39,6 +39,7 @@ h1 { font-size: 34px; margin: 0 0 12px; }
 .tile {
   background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
   padding: 14px 16px 12px; display: flex; flex-direction: column; gap: 2px; min-width: 0;
+  grid-column: span 2;
 }
 .tile.wide { grid-column: span 3; }
 .tile .label { color: var(--muted); font-family: var(--font-mono); font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; }
@@ -109,13 +110,12 @@ td .sw { display: inline-block; width: 10px; height: 10px; border-radius: 2px; m
 .foot p { margin: 0 0 6px; }
 
 @media (max-width: 900px) {
-  .tiles { grid-template-columns: repeat(3, 1fr); }
-  .tile.wide { grid-column: span 3; }
+  .tile.wide { grid-column: span 6; }
   .grid2 { grid-template-columns: 1fr; }
 }
 @media (max-width: 560px) {
-  .tiles { grid-template-columns: repeat(2, 1fr); }
-  .tile.wide { grid-column: span 2; }
+  .tile { grid-column: span 3; }
+  .tile.wide, .tile:nth-child(odd of .tile:not(.wide, [hidden])):nth-last-child(1 of .tile:not(.wide, [hidden])) { grid-column: span 6; }
   .headline .num { font-size: 26px; }
   h1 { font-size: 24px; }
   .bar-row { grid-template-columns: 90px 1fr 48px; }

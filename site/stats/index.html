@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>CB Servers launcher statistics</title>
-<meta name="description" content="Live and historical player counts for the CB Servers launcher: launchers online, players per game, unique launchers per day, week and month, and public server populations.">
+<meta name="description" content="Live and historical player counts for the CB Servers launcher: launchers online, players per game and public server populations.">
 <meta name="color-scheme" content="dark">
 <meta name="theme-color" content="#0a0c0a">
 <link rel="icon" href="/favicon.ico" sizes="any">
@@ -52,9 +52,9 @@
   <section class="tiles" aria-label="Headline numbers">
     <div class="tile"><span class="label">Peak, last 24 hours</span><span class="value" id="t-peak24">–</span><span class="note" id="t-peak24-when"></span></div>
     <div class="tile"><span class="label">All-time peak</span><span class="value" id="t-peakall">–</span><span class="note" id="t-peakall-when"></span></div>
-    <div class="tile"><span class="label">Unique launchers today</span><span class="value" id="t-dau">–</span><span class="note" id="t-dau-note"></span></div>
-    <div class="tile"><span class="label">Unique, last 7 days</span><span class="value" id="t-wau">–</span><span class="note" id="t-wau-note"></span></div>
-    <div class="tile"><span class="label">Unique, last 30 days</span><span class="value" id="t-mau">–</span><span class="note" id="t-mau-note"></span></div>
+    <div class="tile" hidden><span class="label">Unique launchers today</span><span class="value" id="t-dau">–</span><span class="note" id="t-dau-note"></span></div>
+    <div class="tile" hidden><span class="label">Unique, last 7 days</span><span class="value" id="t-wau">–</span><span class="note" id="t-wau-note"></span></div>
+    <div class="tile" hidden><span class="label">Unique, last 30 days</span><span class="value" id="t-mau">–</span><span class="note" id="t-mau-note"></span></div>
     <div class="tile"><span class="label">New launchers today</span><span class="value" id="t-new">–</span><span class="note" id="t-new-note"></span></div>
     <div class="tile wide"><span class="label">Launchers online, last 24 hours</span><span class="value" id="t-spark-online-now">–</span><div class="spark"><canvas id="spark-online" aria-label="Launchers online over the last 24 hours" role="img"></canvas></div></div>
     <div class="tile wide"><span class="label">Players in public servers, all clients</span><span class="value" id="t-svr-now">–</span><div class="spark"><canvas id="spark-servers" aria-label="Players in public servers over the last 24 hours" role="img"></canvas></div><span class="note" id="t-svr-note"></span></div>
@@ -65,7 +65,7 @@
       <button role="tab" data-tab="overview" aria-selected="true">Overview</button>
       <button role="tab" data-tab="games">Games</button>
       <button role="tab" data-tab="servers">Servers</button>
-      <button role="tab" data-tab="uniques">Uniques</button>
+      <button role="tab" data-tab="uniques" hidden>Uniques</button>
     </div>
     <div class="range" id="range-series" role="group" aria-label="Time range">
       <span class="range-label">Range</span>

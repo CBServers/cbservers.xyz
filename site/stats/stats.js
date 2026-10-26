@@ -248,7 +248,9 @@
     const VALID_RANGES = ['6h', '12h', '24h', '48h', '7d', '30d', 'all'];
     if (!VALID_RANGES.includes(state.range)) state.range = '24h';
     if (!['30d', '90d', 'all'].includes(state.uniquesRange)) state.uniquesRange = '30d';
-    if (!['overview', 'games', 'servers', 'uniques'].includes(state.tab)) state.tab = 'overview';
+    // The Uniques tab is hidden in the markup; unhide its button to bring it back.
+    const SHOW_UNIQUES = !document.querySelector('.tabs [data-tab="uniques"]').hidden;
+    if (!['overview', 'games', 'servers', SHOW_UNIQUES && 'uniques'].includes(state.tab)) state.tab = 'overview';
 
     async function getJson(path) {
         const res = await fetch(`${API}${path}`, { cache: 'no-store' });
@@ -553,8 +555,10 @@
     selectTab(state.tab);
     loadSummary();
     loadSeries();
-    loadUniques();
     setInterval(loadSummary, SUMMARY_MS);
     setInterval(loadSeries, SERIES_MS);
-    setInterval(loadUniques, 5 * SERIES_MS);
+    if (SHOW_UNIQUES) {
+        loadUniques();
+        setInterval(loadUniques, 5 * SERIES_MS);
+    }
 })();

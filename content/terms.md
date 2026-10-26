@@ -1,12 +1,12 @@
 ---
 title: "Terms of Service"
-date: 2026-06-26
+date: 2026-10-26
 hidemeta: false
 ShowReadingTime: false
 ShowBreadCrumbs: false
 ---
 
-_Last updated: June 26, 2026_
+_Last updated: October 26, 2026_
 
 These Terms of Service ("Terms") govern your use of the **CB Servers Launcher**
 (the "Launcher") and related services operated by the CB Servers community
@@ -56,14 +56,15 @@ Terms.
 
 The Launcher provides access to third-party, community-maintained game clients.
 We are **not affiliated with or endorsed by** Activision, Infinity Ward,
-Treyarch, Sledgehammer Games, Raven Software, or the maintainers of IW4x,
-Plutonium, AlterWare, Aurora, HorizonMW, or any other client project. All
-trademarks and game content are the property of their respective owners.
+Treyarch, Sledgehammer Games, Raven Software, or the maintainers of COD.PM,
+CoD2x, IW4x, Plutonium, AlterWare, Aurora, HorizonMW, CoD4x, IW3SP-Mod, IW3x,
+T6SP-Mod, H2-Mod, Project BO4, or any other client project. All trademarks and
+game content are the property of their respective owners.
 
 You are responsible for complying with the terms, licenses, and applicable laws
-that govern the original games and any third-party clients you use. Please direct
-support requests about the Launcher to us — not to the original client
-maintainers.
+that govern the original games and any third-party clients you use. Please do
+not contact the original client maintainers with support requests about the
+Launcher. Direct them to us instead.
 
 ## 6. Disclaimer of warranties
 
